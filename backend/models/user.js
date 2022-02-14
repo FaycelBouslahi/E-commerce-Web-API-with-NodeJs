@@ -54,3 +54,22 @@ userSchema.set('toJSON', {
 
 exports.User = mongoose.model('User', userSchema);
 exports.userSchema = userSchema;
+
+
+/**
+User Example:
+
+{
+    "name": "Amal",
+    "email": "amal@me.com",
+    "password": "123456",
+    "phone": "+123999",
+    "isAdmin": "false",
+    "street": "39 Paris",
+    "apartment": "appartment 12",
+    "zip": "2000",
+    "city": "Paris",
+    "country": "France"
+}
+
+ */

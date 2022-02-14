@@ -68,3 +68,21 @@ productSchema.set('toJSON', {
 
 exports.Product = mongoose.model('Product', productSchema);
 
+/**
+Order Example:
+
+{
+	"name": "product 3",
+	"description": "product 3 description",
+	"richDescription": "product 3 richDescription",
+	"image": "product3/image.jpg",
+	"brand": "product 3 brand",
+	"price": 25,
+	"category": "61f7cf4c865a90c2318053a5",
+	"countInStock": 10,
+	"rating": 3,
+	"numReviews": 31,
+	"isFeatured":true
+}
+
+ */

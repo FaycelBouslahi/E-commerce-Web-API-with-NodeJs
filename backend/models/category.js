@@ -22,3 +22,15 @@ categorySchema.set('toJSON', {
 });
 
 exports.Category = mongoose.model('Category', categorySchema);
+
+
+/**
+User Example:
+
+{
+    "name": "Vegetables",
+    "icon": "icon-Veg",
+    "color": "#444"
+}
+
+ */
