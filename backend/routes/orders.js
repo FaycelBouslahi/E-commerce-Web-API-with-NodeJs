@@ -105,6 +105,7 @@ router.delete('/:id', (req, res)=>{
 })
 
 
+//Get Total E-Shop Sales 
 router.get('/get/totalsales', async (req, res)=> {
     const totalSales= await Order.aggregate([
         { $group: { _id: null , totalsales : { $sum : '$totalPrice'}}}
@@ -117,8 +118,10 @@ router.get('/get/totalsales', async (req, res)=> {
     res.send({totalsales: totalSales.pop().totalsales})
 })
 
+
+//Count the number of all orders
 router.get(`/get/count`, async (req, res) =>{
-    const orderCount = await Order.countDocuments((count) => count)
+    const orderCount = await Order.countDocuments((count) => count).clone()
 
     if(!orderCount) {
         res.status(500).json({success: false})
@@ -128,6 +131,8 @@ router.get(`/get/count`, async (req, res) =>{
     });
 })
 
+
+//Get User Orders
 router.get(`/get/userorders/:userid`, async (req, res) =>{
     const userOrderList = await Order.find({user: req.params.userid}).populate({ 
         path: 'orderItems', populate: {
